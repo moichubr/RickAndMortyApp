@@ -1,0 +1,73 @@
+.card {
+    display: inline-block;
+    flex-direction: row;
+    background-color: rgba(71, 10, 107, 0.61);
+    width: 240px;
+    height: 400px;
+    box-sizing:border-box;
+    border-radius: 18px;
+    /* border: 5px solid  rgba(250, 248, 248, 0.719);  */
+    margin: 10px;
+    box-shadow: 0 0 5px 5px rgb(250, 246, 223); 
+    /* z-index: 1000; */
+         
+}
+
+.close {
+    display:inline-flex;
+    width: fit-content;
+    background-color: rgb(231, 62, 62);
+    color: white;
+    border: 1px solid rgb(248, 153, 153);
+    border-radius: 8px;
+    margin-left: 85%;
+    margin-top: 8px;
+    cursor: pointer;
+}
+.name {
+    background-color: rgb(52, 4, 61);
+    height:fit-content;
+    text-align: center;
+    align-items: center;
+    font-size:x-large;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(245, 245, 22);
+    cursor: pointer;
+    /* margin-bottom: -10px; */
+}
+
+.nameContainer{
+    height: 65px;
+    position: relative
+}
+
+.img {
+    /* display: flex; */
+    margin: 18px 5px auto ;
+    width: 90%;
+    height: 180px;
+    border-radius: 18px;
+    padding: 5px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    font-family:'Trebuchet MS', sans-serif;
+    color:rgb(241, 160, 37);
+    margin-top: 15px;
+    /* padding-bottom: 20px; */
+    /* margin-top: px; */
+    
+
+}
+
+.buttonHeart {
+    background-color: transparent;
+    border: 0;
+    display: inline-flex;
+    width: fit-content;
+    padding-top: 5px;
+   
+    
+}

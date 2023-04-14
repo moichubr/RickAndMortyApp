@@ -1,0 +1,73 @@
+.barra {
+    display: inline-flex;
+    margin-top: 15px;
+    width: fit-content;
+    /* position:absolute;
+    top:auto;
+    bottom:auto;
+    right: 0;
+    left: 57%; */
+    /* justify-content: end; */
+    /* margin-right: 20px; */
+    /* margin-left: 150px; */
+
+    
+    /* align-items: center; */
+
+}
+
+.input {
+    background-color: rgb(166, 136, 180);
+    border: 0;
+    border-radius: 5px;
+    margin-right: 8px;
+    color: rgb(2, 2, 53);
+    box-shadow: 0 0 3px 3px rgb(240, 244, 247);
+    height: 30px;
+
+}
+
+.button {
+    background-color: rgb(124, 4, 124);
+    border: 0;
+    width: 90px;
+    height: 30px;
+    color:lightblue;
+    font-size: medium;
+    box-shadow: 0 0 3px 3px rgb(250, 246, 223); 
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.buttonContainer{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-top: -5px;
+    width: fit-content;
+    
+    /* position:absolute;
+    top:auto;
+    bottom:auto;
+    right: 0;
+    left: 90%; */
+    /* margin-top: 10px; */
+    /* margin-right: 5px; */
+    
+
+}
+
+.randomButton {
+    
+    background-color: rgb(124, 4, 124);
+    border: 0;
+    width: 90px;
+    height: 40px;
+    color:lightblue;
+    font-size: medium;
+    box-shadow: 0 0 3px 3px rgb(250, 246, 223); 
+    border-radius: 5px;
+    cursor: pointer;
+}

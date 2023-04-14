@@ -1,0 +1,14 @@
+.App {
+   text-align: center;
+   background-image: url(../Img/Background3.jpg);
+   background-repeat: no-repeat;
+   /* position:relative; */
+   background-attachment: fixed;
+   background-size: cover;
+   min-height: 100vh;
+   /* left: 0px;
+   top: 0px;
+   z-index: -1; */ 
+
+}
+

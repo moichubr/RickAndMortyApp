@@ -1,0 +1,12 @@
+.error {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgba(71, 10, 107, 0.61);
+    width: 700px;
+    border-radius: 18px;
+    box-shadow: 0 0 5px 5px rgb(250, 246, 223);
+    display: inline-flex;
+    flex-direction: column;   
+
+}

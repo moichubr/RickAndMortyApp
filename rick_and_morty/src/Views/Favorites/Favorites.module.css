@@ -1,0 +1,19 @@
+.select {
+    background-color: rgb(166, 136, 180);
+    box-shadow: 0 0 3px 3px rgb(240, 244, 247);
+    color: rgb(9, 9, 73);
+    margin: 10px;
+
+}
+
+.reset {
+    background-color: rgb(231, 62, 62);
+    border: 0;
+    width: 90px;
+    height: 30px;
+    color:lightblue;
+    font-size: medium;
+    box-shadow: 0 0 3px 3px rgb(250, 246, 223); 
+    border-radius: 5px;
+    cursor: pointer;
+}

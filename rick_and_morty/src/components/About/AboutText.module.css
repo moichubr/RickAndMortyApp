@@ -1,0 +1,19 @@
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    min-width: 200px;
+    height: fit-content;
+    background-color: rgba(58, 25, 102, 0.726);
+    box-shadow: 0 0 3px 3px white;
+    border-radius: 18px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 10px;
+}
+
+p{
+    color: white;
+    size: 16px;
+}
