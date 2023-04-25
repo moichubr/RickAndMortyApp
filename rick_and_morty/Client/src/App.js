@@ -52,7 +52,8 @@ function App() {
     event.preventDefault(); //PARA EVITAR Q SE RECARGUE SOLA LA PAG Y PERDER LA INFO
     let found = characters.find((character) => character.id === Number(input));
     if (!found) {
-      fetch(`https://rickandmortyapi.com/api/character/${input}`) //PEDIDO AL SERVER
+      fetch(`http://localhost:3001/rickandmorty/character/${input}`)
+      // fetch(`https://rickandmortyapi.com/api/character/${input}`) //PEDIDO AL SERVER
         .then((response) => response.json()) //CONVIERTE LA RPTA A JSON
         .then((data) => {
           // RESPUESTA CONVERTIDA
@@ -120,7 +121,7 @@ function App() {
         <Route path="/Home" element={<Home characters={characters} onClose={onClose}/>} />
         <Route path="/Favorites" element={<Favorites />} />
         <Route path="/About" element={<About />} />
-        <Route path="/Detail/:detailId" element={<Detail />} />
+        <Route path="/Detail/:id" element={<Detail />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

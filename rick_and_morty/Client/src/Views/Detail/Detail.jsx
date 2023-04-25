@@ -1,11 +1,9 @@
-import { useState } from "react"
-import { useParams } from "react-router-dom"
-import { useEffect } from "react";
-import {Link} from 'react-router-dom'
+import { useState, useEffect } from "react"
+import { Link, useParams } from "react-router-dom"
 import style from './Detail.module.css'
 
 const Detail = () => {
-    const {detailId} = useParams() //HOOK que obtiene el id
+    const {id} = useParams() //HOOK que obtiene el id
     const [character, setCharacter] = useState({
       // name:'',
       // status:'',
@@ -16,7 +14,8 @@ const Detail = () => {
     });
 
     useEffect(() => {
-        fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
+        // fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
+          fetch(`http://localhost:3001/rickandmorty/character/${id}`)
           .then((response) => response.json())
           .then((char) => {
             if (char.name) {
@@ -29,7 +28,7 @@ const Detail = () => {
             window.alert("No hay personajes con ese ID");
           });
         return setCharacter({});
-      }, [detailId]);
+      }, [id]);
 
     return(
       <>
