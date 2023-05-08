@@ -1,6 +1,7 @@
 import "./App.css";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import axios from "axios";
 import About from "./Views/About/About";
 import Home from "./Views/Home/Home";
 import Nav from "./components/NavBar/Nav";
@@ -8,6 +9,7 @@ import Favorites from "./Views/Favorites/Favorites"
 import Detail from "./Views/Detail/Detail";
 import ErrorPage from "./Views/ErrorPage/ErrorPage";
 import Form from "./components/Form/Form";
+
 
 
 function App() {
@@ -19,15 +21,28 @@ function App() {
   //LOGIN
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-  const email = "ejemplo@gmail.com";
-  const password = "1password";
+  // const email = "ejemplo@gmail.com";
+  // const password = "1password";
 
-  function login (userData) {
-    if (userData.password === password && userData.email === email) {
-      setAccess(true);
-      navigate("/home");
-    }
-  }
+
+  //express
+  function login(userData) {
+    const { email, password } = userData;
+    const URL = 'http://localhost:3001/rickandmorty/login/';
+    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+       const { access } = data;
+       setAccess(data);
+       access && navigate('/home');
+    });
+ }
+
+ //webserver
+  // function login (userData) {
+  //   if (userData.password === password && userData.email === email) {
+  //     setAccess(true);
+  //     navigate("/home");
+  //   }
+  // }
 
 
   //LOGOUT
