@@ -24,17 +24,33 @@ function App() {
   // const email = "ejemplo@gmail.com";
   // const password = "1password";
 
+//async-await
+async function login(userData) {
+  const { email, password } = userData;
+  const URL = 'http://localhost:3001/rickandmorty/login/';
+  try {
+    const response = await axios.get(URL + `?email=${email}&password=${password}`)
+    // .then(({ data }) => {
+       const { access } = response.data;
+       setAccess(response.data);
+       access && navigate('/home');
+    
+  } catch (error) {
+    window.alert('error: ' + error.message)
+  }
+  // });
+}
 
   //express
-  function login(userData) {
-    const { email, password } = userData;
-    const URL = 'http://localhost:3001/rickandmorty/login/';
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-       const { access } = data;
-       setAccess(data);
-       access && navigate('/home');
-    });
- }
+//   function login(userData) {
+//     const { email, password } = userData;
+//     const URL = 'http://localhost:3001/rickandmorty/login/';
+//     axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+//        const { access } = data;
+//        setAccess(data);
+//        access && navigate('/home');
+//     });
+//  }
 
  //webserver
   // function login (userData) {
@@ -62,28 +78,53 @@ function App() {
     setInput(inputValue); //SE LO PASA A LA FUNC Q MODIFICA INPUT
   }
 
-  //FUNCION PARA BUSCAR EN EL SERVER Y AGREGAR EL PERSONAJE
-  function onSearch(event) {
+
+  //ASYNC-AWAIT
+  async function onSearch(event) {
     event.preventDefault(); //PARA EVITAR Q SE RECARGUE SOLA LA PAG Y PERDER LA INFO
-    let found = characters.find((character) => character.id === Number(input));
-    if (!found) {
-      fetch(`http://localhost:3001/rickandmorty/character/${input}`)
+    try {
+      let found = characters.find((character) => character.id === Number(input));
+      if (!found){
+      const response = await axios.get(`http://localhost:3001/rickandmorty/character/${input}`)
       // fetch(`https://rickandmortyapi.com/api/character/${input}`) //PEDIDO AL SERVER
-        .then((response) => response.json()) //CONVIERTE LA RPTA A JSON
-        .then((data) => {
           // RESPUESTA CONVERTIDA
-          if (data.name) {
+          if (response.data.name) {
             //SI ENCUENTRA EL PERSONAJE CON EL ID PASADO POR INPUT
-            setCharacters((oldChars) => [...oldChars, data]); //LO AGREGA AL ARRAY CHARACTERS
+            setCharacters((oldChars) => [...oldChars, response.data]); //LO AGREGA AL ARRAY CHARACTERS
           } else {
             // SI NO LO ENCUENTRA
             window.alert("No hay personajes con ese ID"); //DEVUELVE UN ALERT
           }
-        });
-    } else {
-      window.alert("El personaje ya fue agregado");
+        }
+    }
+        catch (error) {
+      error(error.message);
     }
   }
+
+
+  //FUNCION PARA BUSCAR EN EL SERVER Y AGREGAR EL PERSONAJE
+  // function onSearch(event) {
+  //   event.preventDefault(); //PARA EVITAR Q SE RECARGUE SOLA LA PAG Y PERDER LA INFO
+  //   let found = characters.find((character) => character.id === Number(input));
+  //   if (!found) {
+  //     fetch(`http://localhost:3001/rickandmorty/character/${input}`)
+  //     // fetch(`https://rickandmortyapi.com/api/character/${input}`) //PEDIDO AL SERVER
+  //       .then((response) => response.json()) //CONVIERTE LA RPTA A JSON
+  //       .then((data) => {
+  //         // RESPUESTA CONVERTIDA
+  //         if (data.name) {
+  //           //SI ENCUENTRA EL PERSONAJE CON EL ID PASADO POR INPUT
+  //           setCharacters((oldChars) => [...oldChars, data]); //LO AGREGA AL ARRAY CHARACTERS
+  //         } else {
+  //           // SI NO LO ENCUENTRA
+  //           window.alert("No hay personajes con ese ID"); //DEVUELVE UN ALERT
+  //         }
+  //       });
+  //   } else {
+  //     window.alert("El personaje ya fue agregado");
+  //   }
+  // }
 
   //FUNCION DE CERRAR
   function onClose(id) {
