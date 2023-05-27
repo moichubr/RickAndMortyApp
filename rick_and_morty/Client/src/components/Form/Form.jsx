@@ -3,7 +3,7 @@ import LandingText from "../Landing/LandingText";
 import React from "react";
 import validate from "./validation";
 
-const Form = ({login}) => {
+const Form = ({ login }) => {
   const [userData, setUserData] = React.useState({
     email: "",
     password: "",
@@ -15,7 +15,7 @@ const Form = ({login}) => {
   });
 
   function handleInputChange(event) {
-    event.preventDefault()
+    event.preventDefault();
     // const property = event.target.name;
     // const value = event.target.value;
 
@@ -30,11 +30,11 @@ const Form = ({login}) => {
         [event.target.name]: event.target.value,
       })
     );
-  };
-  
-  function handleSubmit (event) {
-    event.preventDefault()
-    login(userData)
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    login(userData);
   }
 
   return (
@@ -51,7 +51,11 @@ const Form = ({login}) => {
             name="email"
             onChange={handleInputChange}
           />
-          {errors.email ? <span className= {style.span}><b>{errors.email}</b></span> : null}
+          {errors.email ? (
+            <span className={style.span}>
+              <b>{errors.email}</b>
+            </span>
+          ) : null}
         </div>
 
         <div className={style.password}>
@@ -63,7 +67,11 @@ const Form = ({login}) => {
             name="password"
             onChange={handleInputChange}
           />
-          {errors.password ? <span className={style.span}><b>{errors.password}</b></span> : null}
+          {errors.password ? (
+            <span className={style.span}>
+              <b>{errors.password}</b>
+            </span>
+          ) : null}
         </div>
 
         <button className={style.login} type="submit" onClick={handleSubmit}>

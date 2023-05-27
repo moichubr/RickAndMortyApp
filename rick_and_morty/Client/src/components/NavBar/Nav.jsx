@@ -24,7 +24,7 @@ export default function Nav({ onSearch, onChange, random, logout }) {
           </NavLink>
         </div>
 
-          <SearchBar onSearch={onSearch} onChange={onChange} random={random} />
+        <SearchBar onSearch={onSearch} onChange={onChange} random={random} />
       </div>
     </>
   );

@@ -5,13 +5,17 @@ const AboutText = () => {
     <>
       <div className={style.textContainer}>
         <p>
-          Mi nombre es Moira Magalí Brun. Vivo en Argentina. Soy estudiante de la carrera FullStack Web Developer.
-          Descubrí en la programación un mundo apasionante y desafiante.
+          Mi nombre es Moira Magalí Brun. Vivo en Argentina. Soy estudiante de
+          la carrera FullStack Web Developer. Descubrí en la programación un
+          mundo apasionante y desafiante.
         </p>
         <p>
-          Esta es una SPA creada con REACT y REDUX donde podrás agregar las cards de los personajes de la serie Rick and Morty y visualizar su respectiva ficha de datos. También podrás seleccionar tus personajes favoritos y filtrarlos de acuerdo a su género y orden de ID.
+          Esta es una SPA creada con REACT, REDUX, CSS, Express y Sequelize, entre otras herramientas,
+          donde podrás agregar las cards de los personajes de la serie Rick and Morty
+          y visualizar su respectiva ficha de datos haciendo click sobre el nombre del personaje.
+          También podrás guardar y filtrar a tus personajes favoritos.
         </p>
-        <p>Espero que la disfrutes!</p>
+        <p>Que la disfrutes!</p>
       </div>
     </>
   );

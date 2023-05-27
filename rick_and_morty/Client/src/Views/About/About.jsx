@@ -1,12 +1,12 @@
-import AboutText from "../../components/About/AboutText"
-import Nav from "../../components/NavBar/Nav"
+import AboutText from "../../components/About/AboutText";
+// import Nav from "../../components/NavBar/Nav"
 
-const About = ()=>{
-    return(
-        <>
-            <AboutText />
-        </>
-    )
-}
+const About = () => {
+  return (
+    <>
+      <AboutText />
+    </>
+  );
+};
 
-export default About
+export default About;

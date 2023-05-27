@@ -3,6 +3,7 @@ const express = require('express');
 const server = express();
 const router = require('./routes/index')
 const PORT = 3001;
+const { conn } = require('./DB_connection');
 
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -21,7 +22,15 @@ server.use((req, res, next) => {
 server.use(express.json());
 server.use('/rickandmorty', router)
 
-server.listen(PORT, () => {console.log('Server on port: ' + PORT)})
+//PRIMERO conecta la DB, resetea las listas, y luego levanta el server
+// conn.sync({force:true}).then(() => {
+//    server.listen(PORT, () => {console.log('Server raised in port: ' + PORT)})
+
+//PRIMERO levanta el server y luego conecta con la DB y resetea las listas
+server.listen(PORT, async () => {
+      await conn.sync({force:false});  //al ponerle false, no resetea las listas automaticamente cuando arranca.
+      console.log('Server raised in port: ' + PORT);
+});
 
 module.exports= server;
 
